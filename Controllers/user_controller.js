@@ -31,7 +31,7 @@ const getAll = async (req, res) => {
   try {
     // const user = await User.find();
     // res.status(200).send(user);
-    const user = await User.insertMany([
+    await data.insertMany([
       {
         name: "meet mistry",
         email: "testing@gmail.com",
@@ -47,7 +47,7 @@ const getAll = async (req, res) => {
         role: "ios-developer",
       },
     ]);
-    const data = await user.find();
+    // const data = await user.find();
     res.status(200).send(data);
   } catch (error) {
     res.status(404).send("page not found");
