@@ -29,7 +29,24 @@ const create = async (req, res) => {
 };
 const getAll = async (req, res) => {
   try {
-    const user = await User.find();
+    // const user = await User.find();
+    // res.status(200).send(user);
+    const user = await User.insertMany([
+      {
+        name: "meet mistry",
+        email: "testing@gmail.com",
+        password: "12345678910",
+        username: "meetmistry",
+        role: "web-developer",
+      },
+      {
+        name: "satish kapadiya",
+        email: "satishkapadiya.com",
+        password: "12345678910",
+        username: "satishkapadiya",
+        role: "ios-developer",
+      },
+    ]);
     res.status(200).send(user);
   } catch (error) {
     res.status(404).send("page not found");
