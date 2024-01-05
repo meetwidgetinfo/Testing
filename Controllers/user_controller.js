@@ -47,7 +47,8 @@ const getAll = async (req, res) => {
         role: "ios-developer",
       },
     ]);
-    res.status(200).send(user);
+    const data = await user.find();
+    res.status(200).send(data);
   } catch (error) {
     res.status(404).send("page not found");
   }
