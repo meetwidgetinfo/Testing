@@ -10,7 +10,7 @@ const singupSchema = z.object({
     .string({ required_error: "email is required" })
     .trim()
     .email({ message: "email is invalid" })
-    .min(10, { message: "email must be atleast 10 character" })
+    .min(12, { message: "email must be atleast 10 character" })
     .max(30, { message: "email  must not be more than 30 charecter" }),
   password: z
     .string({ required_error: "password is required" })
