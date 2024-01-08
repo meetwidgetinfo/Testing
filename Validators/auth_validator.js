@@ -15,13 +15,13 @@ const singupSchema = z.object({
   password: z
     .string({ required_error: "password is required" })
     .trim()
-    .min(10, { message: "password must be atleast 10 charecters" })
+    .min(8, { message: "password must be atleast 10 charecters" })
     .max(30, { message: "password must not be more than 30 charecters" }),
   name: z
     .string({ required_error: "phone number is required" })
     .trim()
-    .min(10, { message: "mobile number must be atleast 10 numbers" })
-    .max(20, { message: "mobile number must not be more than 20 numbers" }),
+    .min(5, { message: "mobile number must be atleast 10 numbers" })
+    .max(30, { message: "mobile number must not be more than 20 numbers" }),
 });
 
 module.exports = singupSchema;
